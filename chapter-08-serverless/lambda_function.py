@@ -37,16 +37,14 @@ labels = [
 ]
 
 def decode_predictions(pred):
-    result = {c: float(p) for c, p in zip(labels, pred)}
-    return result
+    return {c: float(p) for c, p in zip(labels, pred)}
 
 
 def lambda_handler(event, context):
     url = event['url']
     X = preprocessor.from_url(url)
     preds = predict(X)
-    results = decode_predictions(preds)
-    return results
+    return decode_predictions(preds)
 
 
 

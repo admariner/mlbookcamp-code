@@ -22,11 +22,8 @@ def predict():
 
     prediction = predict_single(customer, dv, model)
     churn = prediction >= 0.5
-    
-    result = {
-        'churn_probability': float(prediction),
-        'churn': bool(churn),
-    }
+
+    result = {'churn_probability': float(prediction), 'churn': churn}
 
     return jsonify(result)
 

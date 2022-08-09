@@ -79,9 +79,7 @@ def predict(df, dv, model):
     dicts = df[categorical + numerical].to_dict(orient='records')
 
     X = dv.transform(dicts)
-    y_pred = model.predict_proba(X)[:, 1]
-
-    return y_pred
+    return model.predict_proba(X)[:, 1]
 
 
 # validation

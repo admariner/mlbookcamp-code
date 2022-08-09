@@ -22,10 +22,7 @@ def predict():
     y_pred = model.predict_proba(X)[0, 1]
     churn = y_pred >= 0.5
 
-    result = {
-        'churn_probability': float(y_pred),
-        'churn': bool(churn)
-    }
+    result = {'churn_probability': float(y_pred), 'churn': churn}
 
     return jsonify(result)
 

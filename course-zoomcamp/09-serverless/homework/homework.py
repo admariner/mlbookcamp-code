@@ -20,8 +20,7 @@ def download_image(url):
     with request.urlopen(url) as resp:
         buffer = resp.read()
     stream = BytesIO(buffer)
-    img = Image.open(stream)
-    return img
+    return Image.open(stream)
 
 
 def prepare_image(img, target_size):
@@ -63,9 +62,5 @@ def predict(url):
 def lambda_handler(event, context):
     url = event['url']
     pred = predict(url)
-    result = {
-        'prediction': pred
-    }
-
-    return result 
+    return {'prediction': pred} 
 

@@ -31,5 +31,5 @@ labels = [
     't-shirt'
 ]
 
-result = {c: p for c, p in zip(labels, pred)}
+result = dict(zip(labels, pred))
 print(result)

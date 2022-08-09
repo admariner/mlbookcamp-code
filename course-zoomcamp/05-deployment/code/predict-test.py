@@ -34,6 +34,6 @@ response = requests.post(url, json=customer).json()
 print(response)
 
 if response['churn'] == True:
-    print('sending promo email to %s' % customer_id)
+    print(f'sending promo email to {customer_id}')
 else:
-    print('not sending promo email to %s' % customer_id)
+    print(f'not sending promo email to {customer_id}')

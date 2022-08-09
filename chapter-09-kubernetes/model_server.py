@@ -45,8 +45,7 @@ def make_request(X):
 
 def process_response(pb_result):
     pred = pb_result.outputs['dense_7'].float_val
-    result = {c: p for c, p in zip(labels, pred)}
-    return result
+    return dict(zip(labels, pred))
 
 
 def apply_model(url):
