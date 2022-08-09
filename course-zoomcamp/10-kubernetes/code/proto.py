@@ -4,7 +4,7 @@ from tensorflow.core.framework import tensor_pb2, tensor_shape_pb2, types_pb2
 def dtypes_as_dtype(dtype):
     if dtype == "float32":
         return types_pb2.DT_FLOAT
-    raise Exception("dtype %s is not supported" % dtype)
+    raise Exception(f"dtype {dtype} is not supported")
 
 
 def make_tensor_proto(data):
